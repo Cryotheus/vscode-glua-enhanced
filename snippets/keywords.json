@@ -119,11 +119,7 @@
 	},
 	"Keyword - function": {
 		"prefix": "function",
-		"body": [
-			"function ${1:foo}(${2:arguments})",
-			"\t$0",
-			"end"
-		],
+		"body": ["function ${1:foo}(${2:arguments})${0: }end"],
 		"description": "(Keyword) function"
 	},
 	"Keyword - true": {
