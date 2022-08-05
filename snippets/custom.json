@@ -1,35 +1,35 @@
 {
-	"for-i":
+	"for-index":
 	{
 		"body":
 		[
-			"for ${1:var} = ${2:index}, ${3:count} do",
+			"for ${1:index} = ${2:1}, ${3:maximum} do",
 			"\t$0",
 			"end"
 		],
-		"prefix": "for-i",
+		"prefix": "for-index",
 		"description": "Makes a for loop"
 	},
 	"for-pairs":
 	{
 		"body":
 		[
-			"for ${1:key}, ${2:value} in pairs(${3:table}) do",
+			"for ${1:key}, ${2:value} in pairs(${3:iterable}) do",
 			"\t$0",
 			"end"
 		],
 		"prefix": "for-pairs",
-		"description": "Makes a pairs loop"
+		"description": "Makes a for-in-pairs loop"
 	},
 	"for-ipairs":
 	{
 		"body":
 		[
-			"for ${1:key}, ${2:value} in ipairs(${3:table}) do",
+			"for ${1:index}, ${2:value} in ipairs(${3:iterable}) do",
 			"\t$0",
 			"end"
 		],
 		"prefix": "for-ipairs",
-		"description": "Makes an ipairs loop"
+		"description": "Makes a for-in-ipairs loop"
 	}
 }

@@ -32,15 +32,15 @@
 		"body": "goto ${1:block}",
 		"description": "(Keyword) goto"
 	},
-	"Keyword - goto block": {
+	"Keyword - goto label": {
 		"prefix": "::",
-		"body": "::${1:block}::",
-		"description": "(Keyword) goto block"
+		"body": "::${1:label}::",
+		"description": "(Keyword) goto label"
 	},
 	"Keyword - if": {
 		"prefix": "if",
 		"body": [
-			"if (${1:condition}) then",
+			"if ${1:condition} then",
 			"\t$0",
 			"end"
 		],
@@ -49,14 +49,14 @@
 	"Keyword - elseif": {
 		"prefix": "elseif",
 		"body": [
-			"elseif (${1:condition}) then",
+			"elseif ${1:condition} then",
 			"\t$0",
 			"end"
 		],
 		"description": "(Keyword) elseif"
 	},
 	"Keyword - else": {
-		"prefix": "elseif",
+		"prefix": "else",
 		"body": [
 			"else",
 			"\t$0",
@@ -67,7 +67,7 @@
 	"Keyword - while": {
 		"prefix": "while",
 		"body": [
-			"while (${1:condition}) do",
+			"while ${1:true} do",
 			"\t$0",
 			"end"
 		],
@@ -78,23 +78,28 @@
 		"body": [
 			"repeat",
 			"\t$0",
-			"until (${1:condition})"
+			"until ${1:false}"
 		],
 		"description": "(Keyword) repeat"
 	},
+	"Keyword - until": {
+		"prefix": "until",
+		"body": "until ${1:condition}",
+		"description": "(Keyword) until"
+	},
 	"Keyword - continue": {
 		"prefix": "continue",
-		"body": "continue $0",
-		"description": "(Keyword) continue"
+		"body": "continue",
+		"description": "(Keyword) continue (unreliable - avoid usage)"
 	},
 	"Keyword - break": {
 		"prefix": "break",
-		"body": "break $0",
+		"body": "break",
 		"description": "(Keyword) break"
 	},
 	"Keyword - return": {
 		"prefix": "return",
-		"body": "return $0",
+		"body": "return",
 		"description": "(Keyword) return"
 	},
 	"Keyword - or": {
@@ -123,32 +128,32 @@
 	},
 	"Keyword - true": {
 		"prefix": "true",
-		"body": "true $0",
+		"body": "true",
 		"description": "(Keyword) true"
 	},
 	"Keyword - false": {
 		"prefix": "false",
-		"body": "false $0",
+		"body": "false",
 		"description": "(Keyword) false"
 	},
 	"Keyword - nil": {
 		"prefix": "nil",
-		"body": "nil $0",
+		"body": "nil",
 		"description": "(Keyword) nil"
 	},
 	"Keyword - NULL": {
 		"prefix": "NULL",
-		"body": "NULL $0",
+		"body": "NULL",
 		"description": "(Keyword) NULL"
 	},
 	"Keyword - _G": {
 		"prefix": "_G",
-		"body": "_G $0",
+		"body": "_G",
 		"description": "(Keyword) _G"
 	},
 	"Keyword - _VERSION": {
 		"prefix": "_VERSION",
-		"body": "_VERSION $0",
+		"body": "_VERSION",
 		"description": "(Keyword) _VERSION"
 	},
 	"Keyword - self": {
