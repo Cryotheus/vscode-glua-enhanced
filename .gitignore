@@ -10,3 +10,4 @@ __pycache__/
 *.vsix
 dist/
 publish-vsx.bat
+*.old.json
